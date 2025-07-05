@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+      <link rel="stylesheet" href="style1.css">
+
+      <title>GO SRILANKA-Welcome!</title>
+          <style>
+        /* Basic Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
+            line-height: 1.6;
+            color: #333; /* Default text color */
+            background-color: #f4f4f4; /* Light background for the overall page */
+        }
+
+        /* Container for consistent content width */
+        .container {
+            max-width: 1200px; /* Adjust as needed for content width */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Navigation Bar Styling */
+        .navbar {
+            background-color: #1b1919; /* Dark background from the image */
+            color: #6e3e3e;
+            padding: 15px 0;
+            position: sticky; /* Makes the navbar stick to the top when scrolling */
+            top: 0;
+            z-index: 1000; /* Ensures navbar is above other content */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links ul li {
+            margin-left: 30px;
+        }
+
+        .nav-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 0;
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .nav-links ul li a:hover,
+        .nav-links ul li a.active {
+            color: #ffd700; /* Highlight color for active/hovered link */
+        }
+
+        .book-now-btn {
+            background-color: #18161c; /* Button background color */
+            color: #2a2c3a; /* Button text color */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px; /* Rounded corners for the button */
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 30px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Button shadow */
+        }
+
+        .book-now-btn:hover {
+            background-color: #e6c200; /* Darker shade on hover */
+        }
+
+        /* Hero Section (Dark Blue Background) Styling */
+        .hero-section {
+            background-color: #2a2c3a; /* Dark blue background */
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px; /* Vertical padding for the hero section */
+        }
+
+        .hero-section h1 {
+            font-size: 48px; /* Larger heading for prominence */
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            opacity: 0.8; /* Slightly transparent for a softer look */
+        }
+
+        /* Main Contact Content Section (White Background) Styling */
+        .contact-content-section {
+            background-color: #fff;
+            padding: 60px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow around the white section */
+            margin-top: -50px; /* Pulls this section up to overlap the hero section */
+            position: relative; /* Needed for z-index to work */
+            z-index: 1; /* Ensures it sits on top of the hero section */
+            border-top-left-radius: 15px; /* Rounded top corners for a modern look */
+            border-top-right-radius: 15px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px; /* Space between the two main columns */
+            flex-wrap: wrap; /* Allows columns to wrap to new lines on smaller screens */
+        }
+
+        .get-in-touch,
+        .send-message {
+            flex: 1; /* Allows columns to take equal space */
+            min-width: 300px; /* Minimum width before wrapping to ensure readability */
+            padding: 30px;
+            background-color: #fefefe; /* Slightly off-white for the individual boxes */
+            border-radius: 10px; /* Rounded corners for the boxes */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow for each box */
+        }
+
+        .get-in-touch h2,
+        .send-message h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2a2c3a;
+        }
+
+        .section-description {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Styling for "Get In Touch" contact items */
+        .contact-item {
+            display: flex;
+            align-items: flex-start; /* Align icon and text at the top */
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: #ffd700; /* Icon color matching the button */
+            margin-right: 15px;
+            width: 30px; /* Fixed width for icons to ensure text alignment */
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #2a2c3a;
+        }
+
+        .contact-item p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* Social Media Icons Styling */
+        .follow-us h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #2a2c3a;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            font-size: 20px;
+            color: #fff;
+            background-color: #555; /* Default background for social icons */
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Makes icons perfectly circular */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Specific colors for popular social media icons */
+        .social-icons .fa-facebook-f { background-color: #3b5998; }
+        .social-icons .fa-twitter { background-color: #00acee; }
+        .social-icons .fa-instagram { background-color: #C13584; }
+        .social-icons .fa-youtube { background-color: #FF0000; }
+
+        .social-icons a:hover {
+            opacity: 0.8; /* Slight fade on hover */
+        }
+
+        /* Contact Form Styling */
+        .send-message form {
+            display: flex;
+            flex-wrap: wrap; /* Allows form groups to wrap to new lines */
+            gap: 20px; /* Space between form input groups */
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.half-width {
+            flex: 1 1 calc(50% - 10px); /* Takes roughly half width minus gap for two columns */
+            min-width: 200px; /* Ensures fields don't get too narrow */
+        }
+
+        .form-group.full-width {
+            flex: 1 1 100%; /* Takes full width */
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px; /* Rounded corners for input fields */
+            font-size: 16px;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ffd700; /* Highlight border on focus */
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle shadow on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        .form-group textarea {
+            resize: vertical; /* Allow vertical resizing by the user */
+            min-height: 100px;
+        }
+
+        .submit-group {
+            text-align: right; /* Align button to the right */
+            margin-top: 20px;
+        }
+
+        .send-message-btn {
+            background-color: #121a2b;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px; /* Rounded corners for the send button */
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-flex; /* Allows icon and text to be side-by-side */
+            align-items: center;
+            gap: 10px; /* Space between text and icon */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Button shadow */
+        }
+
+        .send-message-btn:hover {
+            background-color: #e6c200;
+            transform: translateY(-2px); /* Slight lift effect on hover */
+        }
+
+        .send-message-btn i {
+            font-size: 16px;
+        }
+
+        /* Responsive Design Media Queries */
+        @media (max-width: 768px) {
+            .nav-links {
+                /* On smaller screens, you might want to hide the nav links
+                   and implement a hamburger menu with JavaScript */
+                display: none;
+            }
+
+            .hero-section h1 {
+                font-size: 38px;
+            }
+
+            .content-wrapper {
+                flex-direction: column; /* Stack columns vertically on smaller screens */
+            }
+
+            .get-in-touch,
+            .send-message {
+                min-width: unset; /* Remove min-width to allow full width */
+                width: 100%;
+            }
+
+            .form-group.half-width {
+                flex: 1 1 100%; /* Make half-width fields full width on small screens */
+            }
+
+            .book-now-btn {
+                margin-left: 0; /* Remove left margin if nav links are hidden */
+                margin-top: 10px; /* Add some top margin if it's the only element */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .hero-section {
+                padding: 60px 20px;
+            }
+
+            .hero-section h1 {
+                font-size: 32px;
+            }
+
+            .hero-section p {
+                font-size: 16px;
+            }
+
+            .contact-content-section {
+                padding: 30px 0;
+                margin-top: -30px;
+            }
+            
+            .get-in-touch,
+            .send-message {
+                padding: 20px;
+            }
+
+            .get-in-touch h2,
+            .send-message h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="start.html" class="nav_logo">GO SRILANKA</a>
+
+                <div class="nav_menu" id="nav_menu">
+                    <ul class="nav_list">
+                        <li class="nav_item">
+                            <a href="start.html" class=""nav_link>Home</a>
+                        </li>
+
+                        
+                         <li class="nav_item">
+                            <a href="destination.html" class=""nav_link>Destination</a>
+                        </li>
+
+                          <li class="nav_item">
+                            <a href="booknow.html" class=""nav_link>Book Now</a>
+                        </li>
+                    </ul>
+
+            </nav>
+        </header>  
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Let's plan your perfect Sri Lankan adventure</p>
+        </div>
+    </section>
+
+    <!-- Main Content Section containing Get In Touch details and the Contact Form -->
+    <section class="contact-content-section">
+        <div class="container content-wrapper">
+            <!-- Left Column: Get In Touch Details -->
+            <div class="get-in-touch">
+                <h2>Get In Touch</h2>
+                <p class="section-description">Whether you have questions about our tours, need more info about your trip, or just want to say hi, feel free to contact us.</p>
+
+                <!-- Contact Item: Phone -->
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>Pre-sales Inquiries:<br>+94 71 350 9090</p>
+                    </div>
+                </div>
+
+                <!-- Contact Item: Email -->
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>Send us your question:<br>info@gosrilanka.com</p>
+                    </div>
+                </div>
+
+                <!-- Contact Item: Office Location -->
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Office Location</h3>
+                        <p>University Of Kelaniya<br>Kelaniya<br>Sri Lanka</p>
+                    </div>
+                </div>
+
+                <!-- Contact Item: Business Hours -->
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Business Hours</h3>
+                        <p>Mon - Fri: 9 AM - 5 PM<br>Sat - Sun: Closed</p>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+
+            <!-- Right Column: Send A Message (Contact Form) -->
+            <div class="send-message">
+                <h2>Send A Message</h2>
+                <p class="section-description">Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                <form action="#" method="POST">
+                    <!-- Full Name Input -->
+                    <div class="form-group half-width">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full_name" placeholder="Full Name" required>
+                    </div>
+                    <!-- Email Address Input -->
+                    <div class="form-group half-width">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <!-- Phone Number Input -->
+                    <div class="form-group full-width">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" name="phone_number" placeholder="Phone Number (Optional)">
+                    </div>
+                    <!-- Type of Travel Select Input -->
+                     <div class="form-group half-width">
+                        <label for="travel-type">Type of Travel</label>
+                        <select id="travel-type" name="travel_type">
+                            <option value="">Select an option</option>
+                            <option value="solo">Solo Travel</option>
+                            <option value="family">Family Travel</option>
+                            <option value="group">Group Travel</option>
+                            <option value="business">Business Trip</option>
+                        </select>
+                    </div>
+                    <!-- Arrival Date Input -->
+                    <div class="form-group half-width">
+                        <label for="arrival-date">Arrival Date</label>
+                        <input type="date" id="arrival-date" name="arrival_date">
+                    </div>
+                    <!-- Duration Input -->
+                     <div class="form-group half-width">
+                        <label for="duration">Duration (Days)</label>
+                        <input type="number" id="duration" name="duration" placeholder="e.g., 7 days">
+                    </div>
+                    <!-- Number of People Select Input -->
+                     <div class="form-group half-width">
+                        <label for="group-size">No. of People</label>
+                        <select id="group-size" name="group_size">
+                            <option value="">Select a group size</option>
+                            <option value="1-2">1-2</option>
+                            <option value="3-5">3-5</option>
+                            <option value="6-10">6-10</option>
+                            <option value="10+">10+</option>
+                        </select>
+                    </div>
+                    <!-- Your Message Textarea -->
+                    <div class="form-group full-width">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <!-- Send Message Button -->
+                    <div class="form-group full-width submit-group">
+                        <button type="submit" class="send-message-btn">
+                            Send Message <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional: Footer Section (not in original screenshot but good practice) -->
+    <!-- <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 DearsriLanka Tours. All rights reserved.</p>
+        </div>
+    </footer> -->
+
+</body>
+</html>
